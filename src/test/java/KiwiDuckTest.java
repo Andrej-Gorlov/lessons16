@@ -2,17 +2,16 @@ import helpers.ResultOutput;
 import helpers.drivers.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 import pages.ButtonPage;
 import pages.CheckboxesPage;
 
 public class KiwiDuckTest {
-    private WebDriverManager webDriverManager;
     private String nameMethod;
 
     @BeforeEach
     public void setUp() {
-        webDriverManager = new WebDriverManager();
+        ResultOutput.log("выполнение тестов класса KiwiDuckTest");
     }
 
     @Test
@@ -36,6 +35,6 @@ public class KiwiDuckTest {
     @AfterEach
     public void tearDown() {
         ResultOutput.printTestEnd(nameMethod);
-        webDriverManager.closeDriver();
+        WebDriverManager.closeDriver();
     }
 }
